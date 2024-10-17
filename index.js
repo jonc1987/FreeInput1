@@ -35,6 +35,21 @@ app.get('/submit', (req, res) => {
     });
 });
 
+app.get('/view', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'view.html'));
+});
+
+
+app.get('/submissions.json', (req, res) => {
+    fs.readFile('submissions.json', (err, data) => {
+        if (err) {
+            return res.status(500).send('Error reading submissions file.');
+        }
+        res.header("Content-Type", "application/json");
+        res.send(data);
+    });
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
