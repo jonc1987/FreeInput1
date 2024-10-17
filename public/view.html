@@ -56,7 +56,7 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Problem</th>
+                <th>Message</th>
                 <th>Timestamp</th>
             </tr>
         </thead>
@@ -76,7 +76,7 @@
                     row.innerHTML = `
                         <td>${submission.name}</td>
                         <td>${submission.email}</td>
-                        <td>${submission.issue}</td>
+                        <td>${submission.message}</td>
                         <td>${submission.timestamp}</td>
                     `;
                     tableBody.appendChild(row);
